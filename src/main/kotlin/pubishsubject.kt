@@ -1,4 +1,6 @@
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
 
 fun main(){
@@ -49,7 +51,50 @@ fun main(){
 
         quotes.onNext(episodeV)
         // Nothing happens here, as it was already completed
+        subscription2.dispose()
+        subscription3.dispose()
+    }
 
+    exampleOf("Behavior Subject"){
+        val subscriptions = CompositeDisposable()
+
+        val quotes = BehaviorSubject.createDefault(episodeV)
+
+        val subscription1 = quotes.subscribeBy(
+            onNext = { println("1) $it")},
+            onError = { println("1) $it")},
+            onComplete = { println("1) Complete")}
+        )
+
+        quotes.onError(Throwable("Never Said that"))
+
+        // it will receive the error event only not the initial default() event
+        // stop events such as onError and onCompleted are always delivered to all subscriber
+        // current or old.
+        subscriptions.add(
+            quotes.subscribeBy(
+                onNext = { println("2) $it")},
+                onError = { println("2) $it")},
+                onComplete = { println("2) Complete")}
+            )
+        )
+    }
+
+    exampleOf("Behavior Subject state"){
+
+        val subscription = CompositeDisposable()
+
+        val quotes = BehaviorSubject.createDefault(episodeIX)
+        println(quotes.value)
+
+        subscription.add(
+            quotes.subscribeBy{
+                println("1) $it")
+            }
+        )
+
+        quotes.onNext(episodeVII)
+        println(quotes.value)
     }
 
 }
