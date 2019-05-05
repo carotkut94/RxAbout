@@ -2,6 +2,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.subjects.BehaviorSubject
 import io.reactivex.subjects.PublishSubject
+import io.reactivex.subjects.ReplaySubject
 
 fun main(){
 
@@ -95,6 +96,22 @@ fun main(){
 
         quotes.onNext(episodeVII)
         println(quotes.value)
+    }
+
+    exampleOf("Replay Subject"){
+        val subscriptions = CompositeDisposable()
+        val subject = ReplaySubject.createWithSize<String>(2)
+
+        subject.onNext(solo)
+
+        // This subscription was added after onNext() above, but still gets the emitted event
+        subscriptions.add(
+            subject.subscribeBy(
+                onNext = {println("1) $it")},
+                onError = { println("1) $it")},
+                onComplete = { println("1) Completed")}
+            )
+        )
     }
 
 }

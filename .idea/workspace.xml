@@ -46,10 +46,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pubishsubject.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+            <state relative-caret-position="329">
+              <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
               <folding>
-                <element signature="e#0#136#0" expanded="true" />
+                <element signature="e#0#224#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -202,15 +202,16 @@
       <option name="presentableId" value="Default" />
       <updated>1556994710734</updated>
       <workItem from="1556994714116" duration="2549000" />
-      <workItem from="1557057845166" duration="2241000" />
+      <workItem from="1557057845166" duration="2561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4790000" />
+    <option name="totallyTimeSpent" value="5110000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25445706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -291,10 +292,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pubishsubject.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+        <state relative-caret-position="329">
+          <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
           <folding>
-            <element signature="e#0#136#0" expanded="true" />
+            <element signature="e#0#224#0" expanded="true" />
           </folding>
         </state>
       </provider>
